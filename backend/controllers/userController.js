@@ -10,9 +10,9 @@ const User = require('../models/userModel');
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, organization } = req.body;
-
+    
     // validation
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !organization) {
         res.status(400);
         throw new Error('Please include all fields');
     }
