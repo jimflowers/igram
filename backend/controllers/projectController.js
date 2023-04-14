@@ -51,11 +51,11 @@ const getProject = asyncHandler(async (req, res) => {
 // @access  private
 
 const createProject = asyncHandler(async (req, res) => {
-    const { projectName, description } = req.body;
+    const { projectName, projectDescription, investigator_id } = req.body;
 
-    if (!projectName || !description) {
+    if (!projectName || !projectDescription) {
         res.status(400);
-        throw new Error('Please add a product and description');
+        throw new Error('Please add a title and description');
     }
 
     // Get user using the id in the JWT
@@ -68,8 +68,8 @@ const createProject = asyncHandler(async (req, res) => {
 
     const project = await Project.create({
         projectName,
-        description,
-        researcher: req.user.id,
+        projectDescription,
+        investigator_id: req.user.id,
     });
     res.status(201).json(project);
 });

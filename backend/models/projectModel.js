@@ -2,25 +2,25 @@ const mongoose = require('mongoose');
 
 const projectSchema = mongoose.Schema(
     {
-        researcher: {
+        investigator_id: {
             type: mongoose.Schema.Types.ObjectId,
             required: [true],
             ref: 'User',
         },
         projectName: {
             type: String,
-            required: [true, 'Please add project name'],
+            required: [true, 'Please add project title'],
             unique: true,
         },
-        description: {
+        projectDescription: {
             type: String,
             required: [true, 'Please add a description'],
         },
-        organization: {
+        projectOrganization: {
             type: String,
             required: false
         },
-        status: {
+        projectStatus: {
             type: String,
             required: [true],
             enum: ['open', 'closed', 'archived'],
