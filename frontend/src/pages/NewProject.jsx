@@ -8,7 +8,7 @@ import BackButton from '../components/BackButton'
 
 function NewProject() {
 const {user} = useSelector((state)=> state.auth)
-const {isLoading, isError, isSuccess, message} = useSelector((state)=> state.project)
+const {isLoading, isError, isSuccess, message} = useSelector((state)=> state.projects)
 
 
 // now we set the local state
@@ -45,8 +45,10 @@ if(isLoading) {
   return (
    <>
    <BackButton url='/home'/>
-   <section className="heading">Create New Project
-   <p>Please fill out the form</p></section>
+   <section className="heading">
+    <h1>Create New Project</h1>
+   <p>Please fill out the form</p>
+   </section>
 
    <section className="form">
     <div className="form-group">
@@ -54,9 +56,9 @@ if(isLoading) {
       <input type="text" className="form-control" value={name} disabled />
      </div>
      
-     <form onSubmit={onSubmit}>
+     
 
-    
+     <form onSubmit={onSubmit}>
      <div className="form-group">
       <label htmlFor="projectName">Project Title</label>
       <input type="text" className="form-control" value={projectName} onChange={(e) => setprojectName(e.target.value)}/>
@@ -65,7 +67,7 @@ if(isLoading) {
       <label htmlFor="projectOrganization">Project Organization</label>
       <input type="text" className="form-control" value={projectOrganization} onChange={(e) => setprojectOrganization(e.target.value)} />
      </div>
-     <form onSubmit={onSubmit}></form>
+     
      <div className="form-group">
       <label htmlFor="projectDescription">Describe the Project</label>
       <textarea className="form-control" value={projectDescription} onChange={(e) => setprojectDescription(e.target.value)}

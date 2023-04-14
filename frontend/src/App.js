@@ -13,6 +13,8 @@ import Landing from './pages/Landing';
 import Register from './pages/Register';
 
 import NewProject from './pages/NewProject';
+import Projects from './pages/Projects';
+import Project from './pages/Project';
 
 function App() {
     return (
@@ -26,7 +28,16 @@ function App() {
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<Register />} />
                         <Route path='/new-project' element={<PrivateRoute />}>
-                            <Route path='/new-project' element={<NewProject />} />
+                            <Route
+                                path='/new-project'
+                                element={<NewProject />}
+                            />
+                        </Route>
+                        <Route path='/projects' element={<PrivateRoute />}>
+                            <Route path='/projects' element={<Projects />} />
+                        </Route>
+                        <Route path='/project/:projectId' element={<PrivateRoute />}>
+                            <Route path='/project/:projectId' element={<Project />} />
                         </Route>
                     </Routes>
                 </div>

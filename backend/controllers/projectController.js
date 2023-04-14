@@ -36,7 +36,7 @@ const getProject = asyncHandler(async (req, res) => {
         throw new Error('Project not found.')
     }
 
-    if (project.researcher.toString() !== req.user.id) {
+    if (project.investigator_id.toString() !== req.user.id) {
         res.status(401);
         throw new Error('User not authorized');
     }

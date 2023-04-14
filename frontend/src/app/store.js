@@ -5,6 +5,6 @@ import projectReducer from '../features/projects/projectSlice'
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    project: projectReducer,
+    projects: projectReducer,  // import that this equate to the state.projects name
   },
 });
