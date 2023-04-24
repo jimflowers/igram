@@ -43,7 +43,13 @@ const {projectId} =useParams()
         <h3>Description</h3>
         <p>{project.projectDescription}</p>
         </div>
-      </header>
+        </header>
+        <h3>Project Documents</h3>
+       <button className='btn -sm'>Add</button>
+          <button className='btn-sm'>Delete</button>
+          
+        
+      
     
       </div>
   )
